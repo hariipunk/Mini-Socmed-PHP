@@ -1,0 +1,653 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333333;
+    line-height: 1.6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.photo-box {
+    padding: 0px;
+    margin-bottom: 0px;
+    background-color: #ffffff;
+}
+
+.user-photo,
+.cover-photo-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.cover-photo-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.user-photo + p,
+.cover-photo-img + p {
+    font-style: italic;
+    color: #657786;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.no-photo-message {
+    font-size: 14px;
+    color: #ccc;
+    font-style: italic;
+}
+
+.photo-box .cover-photo-container {
+    text-align: center;
+    margin-bottom: -80px;
+}
+
+.photo-box .user-photo-container {
+    text-align: center;
+}
+
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #1da1f2;
+}
+
+.profile {
+    position: relative;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+.profile .icon {
+    color: #1da1f2;
+}
+
+.profile-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: -120px;
+    background-color: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    z-index: 1000;
+}
+
+.profile-menu a {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: #333333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.profile-menu a i {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.profile-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+.profile:hover .profile-menu {
+    display: block;
+}
+
+.message-icon {
+    position: relative;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+}
+
+.message-icon:hover {
+    color: #1da1f2;
+}
+
+.notification-badge {
+    position: absolute;
+    top: 0px;
+    right: 100px;
+    background-color: #ff0000;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0px 6px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    max-width: 600px;
+    margin: 70px auto 20px;
+    padding: 0 15px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.form-group input[type="file"] {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+}
+
+.user-photo {
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+button[type="submit"] {
+    background-color: #1da1f2;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0d95e8;
+}
+
+.error, .success {
+    color: #ff4d4d;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.success {
+    color: #4caf50;
+}
+
+.popup-notification {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    word-wrap: break-word;
+    z-index: 1000;
+}
+
+.popup-notification.success {
+    background-color: #4CAF50;
+}
+
+.popup-notification.error {
+    background-color: #FF4D4D;
+}
+
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    .profile .icon {
+        font-size: 24px;
+    }
+
+    .profile-menu {
+        left: -120px;
+    }
+
+    .profile {
+        margin-right: 0px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="file"] {
+        font-size: 16px;
+    }
+
+    button[type="submit"] {
+        font-size: 16px;
+    }
+
+    .popup-notification {
+        width: 90%;
+        font-size: 12px;
+        padding: 12px;
+    }
+}
+/* CSS untuk Insight.php */
+.level-box.highlight {
+    background-color: #e6f7e6;
+    border-left: 5px solid #4caf50;
+}
+
+.level-box.highlight::before {
+    content: '\1F3C6'; /* Emoji piala */
+    color: #4caf50;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 5px;
+    left: 90%;
+}
+
+.change-up {
+    color: green;
+}
+
+.change-down {
+    color: red;
+}
+
+.change-no-change {
+    color: gray;
+}
+
+.change-up::before {
+    content: '\2191'; /* Emoji panah naik */
+    margin-right: 5px;
+}
+
+.change-down::before {
+    content: '\2193'; /* Emoji panah turun */
+    margin-right: 5px;
+}
+
+.change-no-change::before {
+    content: '\2192'; /* Emoji panah datar */
+    margin-right: 5px;
+}
+
+/* Pagination */
+.pagination {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.pagination .button {
+    background-color: #1da1f2;
+    color: #ffffff;
+    border: none;
+    border-radius: 18px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    text-decoration: none;
+    margin: 3px;
+}
+
+.pagination .button:hover {
+    background-color: #0d95e8;
+}
+
+/* CSS Progress.php */
+.progress-container {
+    max-width: 900px;
+    background: #ffffff;
+    margin: 70px auto 20px;
+    padding: 0 15px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.progress-container h1 {
+    font-size: 26px;
+    color: #1da1f2;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.progress-container p {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.progress-container strong {
+    color: #1da1f2;
+    font-weight: bold;
+}
+
+.progress-box {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.progress-box p {
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.progress-bar {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    background: #e0e0e0;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), transparent);
+    pointer-events: none;
+    animation: progress-shine 2s linear infinite;
+}
+
+@keyframes progress-shine {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #1da1f2, #0d95e8);
+    width: 0%;
+    transition: width 0.4s ease-in-out;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.level-box {
+    background-color: #f9f9f9;
+    border-left: 6px solid #1da1f2; 
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 20px;
+    position: relative;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+}
+
+.level-box::before {
+    content: '\1F680'; 
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: #1da1f2;
+}
+
+.level-box p:first-child {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.level-notification {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
+
+.level-box:last-child {
+    background-color: #e6f7e6; 
+    border-left: 6px solid #4caf50; 
+}
+
+.level-box:last-child::before {
+    content: '\1F3C6'; 
+    color: #4caf50;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px; 
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transform: translateY(-50px);
+    opacity: 0;
+    animation: modalAppear 0.3s forwards;
+}
+
+@keyframes modalAppear {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    color: #333;
+    font-size: 36px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff6347; 
+}
+
+.button {
+    background-color: #1da1f2; 
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 0px;
+}
+
+.button:hover {
+    background-color: #1da1f2; 
+    transform: translateY(-3px); 
+}
+
+/* Animasi Kunci */
+.key {
+    width: 0;
+    height: 0;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -15px;
+    margin-left: -15px;
+    background: gold;
+    opacity: 0;
+    transition: width 2s, height 2s, opacity 1s;
+}
+
+.key.unlocked {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+    animation: spin 2s infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Notifikasi Sukses/Gagal */
+.notification {
+    display: none;
+    position: fixed;
+    top: 40%;
+    right: 40%;
+    background-color: #4CAF50; 
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: opacity 0.5s ease;
+}
+
+.notification.error {
+    background-color: #f44336; 
+}
+
+.notification.show {
+    display: block;
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+	.notification {
+		top: 20%;
+		right: 20%;
+		}
+}
+
+@media screen and (max-width: 768px) {
+    .progress-container {
+        padding: 20px;
+        margin: 50px auto 20px;
+    }
+
+    .progress-container h1 {
+        font-size: 22px;
+    }
+
+    .progress-container p {
+        font-size: 14px;
+    }
+
+    .progress-box {
+        padding: 15px;
+    }
+
+    .progress-bar {
+        height: 18px;
+    }
+
+    .progress-fill {
+        font-size: 12px;
+    }
+    
+   .level-box {
+        padding: 15px;
+    }
+
+    .level-box::before {
+        font-size: 20px;
+        top: 5px;
+        left: 5px;
+    }
+
+    .level-notification {
+        font-size: 13px;
+    }
+}
