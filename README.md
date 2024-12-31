@@ -1,10 +1,10 @@
-Hallo, ini adalah Projek pertama Saya Mini Socmed.
+# Hallo, ini adalah Projek pertama Saya Mini Socmed.
 
 * Jika error Kamu harus mengganti permission pada setiap File menjadi 644 dan 755 atau 775 untuk Folder.
 
 * Buat folder bernama "uploads". dan tambahkan .htaccess jika diperlukan untuk membatasi akses ke folder "uploads".
 
-Fitur-fitur :
+# Fitur-fitur :
 
 * Login
   ![IMG_20241231_200100](https://github.com/user-attachments/assets/0e9cd455-0fdf-4dd8-88bb-0c749eea4962)
@@ -27,6 +27,21 @@ Fitur-fitur :
 * Settings, Cheat, Tools
   ![Screenshot_2024-12-31-20-02-33-14](https://github.com/user-attachments/assets/a9378f4a-d916-4c54-a1d4-38534597a1cd)
 ![Screenshot_2024-12-31-20-02-47-67](https://github.com/user-attachments/assets/6a36aa36-495c-4770-97bc-66cb811efe19)
+
+# Note
+Banyak pemborosan dalam kode-kode ini, Kamu bisa mempersingkat dengan memindahkan dan menambahkan beberapa File lagi sehingga menjadi lebih terstruktur.
+
+# Saran
+* Kamu bisa mengubah Conn menjadi PDO.
+* Memangkas dan memindah kode dalam satu File ke beberapa File, Contohnya dalam File index.php.
+* Membuat File header.php dan footer.php (jika perlu) agar memudahkan dalam ke depannya.
+* Memisahkan data sensitif dari db.php
+* Memisahkan Javascript.
+
+# Tools
+* ChatGPT Backend+Frontend
+* QuickEdit+
+* PHP + Js & Jquery + FontAwesome
 
 
 
